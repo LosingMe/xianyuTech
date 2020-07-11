@@ -31,8 +31,28 @@
 
 - (void)listenAction:(SEL)action to:(nullable id)target forEvent:(nullable UIEvent *)event{
     
-    [target performSelector: action withObject: @""];
+    
     NSLog(@"%@ - %@ - %@", self, target, NSStringFromSelector(action));
+    
+    if ([self isKindOfClass: UIButton.class ]){
+        // 拦截按钮点击
+        
+    }
+    else{
+        
+    }
+    
+    
+    
+    //  objc_msgSend(object, selector);
+    //  通过 selector，去找方法实现
+    
+    // IMP ， 指向函数的指针， 函数地址
+    
+    
+    
+    //  selector
+    //
 }
 
 
