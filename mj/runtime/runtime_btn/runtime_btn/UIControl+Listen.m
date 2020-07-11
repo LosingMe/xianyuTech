@@ -31,7 +31,7 @@
 
 - (void)listenAction:(SEL)action to:(nullable id)target forEvent:(nullable UIEvent *)event{
     
-    
+    [target performSelector: action withObject: @""];
     NSLog(@"%@ - %@ - %@", self, target, NSStringFromSelector(action));
 }
 
