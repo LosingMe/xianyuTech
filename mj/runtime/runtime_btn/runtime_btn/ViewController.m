@@ -23,7 +23,7 @@
 
 - (IBAction)one:(id)sender {
     
-    
+    NSLog(@"%s 道吾恶者", __func__);
     
 }
 
@@ -31,7 +31,7 @@
 - (IBAction)two:(id)sender {
     
     
-    
+    NSLog(@"%s 是", __func__);
     
 }
 
@@ -42,7 +42,7 @@
 - (IBAction)three:(id)sender {
     
     
-    
+    NSLog(@"%s 吾师", __func__);
     
     
 }
