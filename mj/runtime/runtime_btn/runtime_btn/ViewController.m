@@ -17,24 +17,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSMutableDictionary * container = [NSMutableDictionary dictionary];
+    container[@"name"] = @"hello";
     
-    NSMutableArray * container = [NSMutableArray array];
-    [container addObject: @"hello"];
-    NSLog(@"NSMutableArray %@", container);
-  //  NSLog(@"NSMutableArray %@", container.class);
+    NSLog(@"container %@", container.class);
     NSString * var = nil;
+    container[@"girl"] = var;
     
-    [container addObject: var];
-    
-    
-    
-    // addObject： , 底层调用的是 insertObject: 方法
-    
-    
-    //  3   CoreFoundation                      0x00007fff23ece563 -[__NSArrayM insertObject:atIndex:].cold.1 + 35
-    
-    NSLog(@"NSMutableArray %@", container);
+    NSLog(@"container %@", container);
+    [container setObject:@"hand" forKey:var];
+  //  container[var] = @"hand";
+
 }
+
+
+
+
+- (void) demoArray{
+      NSMutableArray * container = [NSMutableArray array];
+      [container addObject: @"hello"];
+      NSLog(@"NSMutableArray %@", container);
+    //  NSLog(@"NSMutableArray %@", container.class);
+      NSString * var = nil;
+      
+      [container addObject: var];
+      
+      
+      
+      // addObject： , 底层调用的是 insertObject: 方法
+      
+      
+      //  3   CoreFoundation                      0x00007fff23ece563 -[__NSArrayM insertObject:atIndex:].cold.1 + 35
+      
+      NSLog(@"NSMutableArray %@", container);
+}
+
 
 
 
