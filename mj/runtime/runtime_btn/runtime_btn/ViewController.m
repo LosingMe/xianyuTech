@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSMutableArray * container = [NSMutableArray array];
+    [container addObject: @"hello"];
+    
+    NSString * var = nil;
+    [container addObject: var];
+    
+    
 }
 
 

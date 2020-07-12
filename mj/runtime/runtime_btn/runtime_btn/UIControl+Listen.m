@@ -33,7 +33,7 @@
     
     
     NSLog(@"%@ - %@ - %@", self, target, NSStringFromSelector(action));
-    [self sendAction:action to:target forEvent:event];
+    [self listenAction:action to:target forEvent:event];
     if ([self isKindOfClass: UIButton.class ]){
         // 拦截按钮点击
         
