@@ -33,7 +33,7 @@
     
     
     NSLog(@"%@ - %@ - %@", self, target, NSStringFromSelector(action));
-    
+    [self sendAction:action to:target forEvent:event];
     if ([self isKindOfClass: UIButton.class ]){
         // 拦截按钮点击
         
@@ -51,8 +51,27 @@
     
     
     
-    //  selector
-    //
+    //   selector
+    //   class_rw_t 里面的 method_t ( Method )
+    
+    
+    
+    
+    
+    // Method:
+    
+    // SEL name (selector)
+    // types
+    // IMP
+    
+    
+    
+    
+    // 交换的是
+    
+    // class_rw_t 里面的
+    //  
+    
 }
 
 
