@@ -22,7 +22,15 @@
     [container addObject: @"hello"];
     
     NSString * var = nil;
-    [container addObject: var];
+    if (var){
+        [container addObject: var];
+    }
+    
+    
+    // addObject： , 底层调用的是 insertObject: 方法
+    
+    
+    //  3   CoreFoundation                      0x00007fff23ece563 -[__NSArrayM insertObject:atIndex:].cold.1 + 35
     
     
 }
