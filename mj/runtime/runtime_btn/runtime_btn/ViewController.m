@@ -20,11 +20,12 @@
     
     NSMutableArray * container = [NSMutableArray array];
     [container addObject: @"hello"];
-    
+    NSLog(@"NSMutableArray %@", container);
+  //  NSLog(@"NSMutableArray %@", container.class);
     NSString * var = nil;
-    if (var){
-        [container addObject: var];
-    }
+    
+    [container addObject: var];
+    
     
     
     // addObject： , 底层调用的是 insertObject: 方法
@@ -32,7 +33,7 @@
     
     //  3   CoreFoundation                      0x00007fff23ece563 -[__NSArrayM insertObject:atIndex:].cold.1 + 35
     
-    
+    NSLog(@"NSMutableArray %@", container);
 }
 
 
