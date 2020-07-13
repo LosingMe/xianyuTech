@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26065D4124BB6A57008702D8 /* NSMutableArray+VoidInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = 26065D4024BB6A57008702D8 /* NSMutableArray+VoidInsert.m */; };
 		26065D4424BB752B008702D8 /* NSMutableDictionary+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 26065D4324BB752B008702D8 /* NSMutableDictionary+Safe.m */; };
+		26278E7B24BCC733003F9EC5 /* NSDictionary+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = 26278E7A24BCC733003F9EC5 /* NSDictionary+Guard.m */; };
 		26F3A29A24B98F5E00155E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F3A29924B98F5E00155E51 /* AppDelegate.m */; };
 		26F3A29D24B98F5E00155E51 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F3A29C24B98F5E00155E51 /* SceneDelegate.m */; };
 		26F3A2A024B98F5E00155E51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F3A29F24B98F5E00155E51 /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		26065D4024BB6A57008702D8 /* NSMutableArray+VoidInsert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+VoidInsert.m"; sourceTree = "<group>"; };
 		26065D4224BB752B008702D8 /* NSMutableDictionary+Safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Safe.h"; sourceTree = "<group>"; };
 		26065D4324BB752B008702D8 /* NSMutableDictionary+Safe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Safe.m"; sourceTree = "<group>"; };
+		26278E7924BCC733003F9EC5 /* NSDictionary+Guard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Guard.h"; sourceTree = "<group>"; };
+		26278E7A24BCC733003F9EC5 /* NSDictionary+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Guard.m"; sourceTree = "<group>"; };
 		26F3A29524B98F5E00155E51 /* runtime_btn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runtime_btn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F3A29824B98F5E00155E51 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26F3A29924B98F5E00155E51 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				26065D4024BB6A57008702D8 /* NSMutableArray+VoidInsert.m */,
 				26065D4224BB752B008702D8 /* NSMutableDictionary+Safe.h */,
 				26065D4324BB752B008702D8 /* NSMutableDictionary+Safe.m */,
+				26278E7924BCC733003F9EC5 /* NSDictionary+Guard.h */,
+				26278E7A24BCC733003F9EC5 /* NSDictionary+Guard.m */,
 			);
 			path = runtime_btn;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				26F3A2A024B98F5E00155E51 /* ViewController.m in Sources */,
 				26065D4124BB6A57008702D8 /* NSMutableArray+VoidInsert.m in Sources */,
 				26065D4424BB752B008702D8 /* NSMutableDictionary+Safe.m in Sources */,
+				26278E7B24BCC733003F9EC5 /* NSDictionary+Guard.m in Sources */,
 				26F3A29A24B98F5E00155E51 /* AppDelegate.m in Sources */,
 				26F3A2AB24B98F6100155E51 /* main.m in Sources */,
 				26F3A29D24B98F5E00155E51 /* SceneDelegate.m in Sources */,

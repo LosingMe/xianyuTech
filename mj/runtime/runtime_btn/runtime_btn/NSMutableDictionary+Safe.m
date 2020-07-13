@@ -23,12 +23,17 @@
     
     // 类蔟，意味着它的真实类型，会发生变化
     
+    //  __NSDictionaryM
+    //  __NSDictionary Mutable
+    
     Class real = NSClassFromString(@"__NSDictionaryM");
     Method kv = class_getInstanceMethod(real, @selector(setObject:forKeyedSubscript:));
     Method safeKv = class_getInstanceMethod(real, @selector(safeSetObject:forKeyedSubscript:));
     method_exchangeImplementations(kv, safeKv);
     
-    
+    Method kVal = class_getInstanceMethod(real, @selector(setObject:forKey:));
+    Method guardVal = class_getInstanceMethod(real, @selector(guardSetObject:forKey:));
+    method_exchangeImplementations(kVal, guardVal);
     
     
     
@@ -47,6 +52,15 @@
         return;
     }
     [self safeSetObject:obj forKeyedSubscript:key];
+}
+
+
+- (void)guardSetObject:(id)anObject forKey:(id<NSCopying>)aKey{
+    if (aKey == nil){
+        return;
+    }
+    [self guardSetObject: anObject forKey: aKey];
+    
 }
 
 

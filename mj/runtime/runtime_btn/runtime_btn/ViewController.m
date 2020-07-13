@@ -25,9 +25,16 @@
     container[@"girl"] = var;
     
     
-   // [container setObject:@"hand" forKey:var];
+    [container setObject:@"foot" forKey:var];
     container[var] = @"hand";
     NSLog(@"container %@", container);
+    
+    NSDictionary * read = (NSDictionary *)container.copy;
+    NSLog(@"container cp %@", read.class);
+    
+    NSDictionary * r = @{@"自卑": @"学生妹", @"前进": @"wake up"};
+    
+    NSLog(@"r %@", r.class);
 }
 
 
