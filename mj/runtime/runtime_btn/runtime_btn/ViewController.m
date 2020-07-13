@@ -24,10 +24,10 @@
     NSString * var = nil;
     container[@"girl"] = var;
     
+    
+   // [container setObject:@"hand" forKey:var];
+    container[var] = @"hand";
     NSLog(@"container %@", container);
-    [container setObject:@"hand" forKey:var];
-  //  container[var] = @"hand";
-
 }
 
 

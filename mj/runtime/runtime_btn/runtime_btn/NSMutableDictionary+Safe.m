@@ -20,25 +20,33 @@
 
 + (void)load{
     
+    
+    // 类蔟，意味着它的真实类型，会发生变化
+    
     Class real = NSClassFromString(@"__NSDictionaryM");
     Method kv = class_getInstanceMethod(real, @selector(setObject:forKeyedSubscript:));
     Method safeKv = class_getInstanceMethod(real, @selector(safeSetObject:forKeyedSubscript:));
- //   method_exchangeImplementations(kv, safeKv);
+    method_exchangeImplementations(kv, safeKv);
     
     
-    //  '*** -[__NSDictionaryM setObject:forKeyedSubscript:]
     
-    // 底层调用的，好像不是
+    
+    
     
     //  -[__NSDictionaryM setObject:forKey:]: 
     
+    // 底层调用的，好像不是
     
+    //  '*** -[__NSDictionaryM setObject:forKeyedSubscript:]
 }
 
 
 
 - (void)safeSetObject:(id)obj forKeyedSubscript:(id<NSCopying>)key{
-    
+    if (key == nil){
+        return;
+    }
+    [self safeSetObject:obj forKeyedSubscript:key];
 }
 
 
