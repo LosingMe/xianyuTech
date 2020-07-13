@@ -48,11 +48,19 @@
                                     <constraint firstAttribute="width" constant="46" id="pwh-My-BJR"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朱子语类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDC-fB-daW">
+                                <rect key="frame" x="172.5" y="811.5" width="69.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cDC-fB-daW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="15O-dP-l2Y"/>
                             <constraint firstItem="qWK-XH-sZu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="2Sf-0Z-Mp0"/>
                             <constraint firstItem="qWK-XH-sZu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eBU-HN-piJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cDC-fB-daW" secondAttribute="bottom" constant="30" id="iHb-wS-R2e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
