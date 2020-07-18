@@ -27,7 +27,7 @@
     NSLog(@"Core Foundation  current %p,  main %p", CFRunLoopGetCurrent(),CFRunLoopGetMain());
     
     
-    
+    NSLog(@"%@", [NSRunLoop currentRunLoop]);
     
 }
 
