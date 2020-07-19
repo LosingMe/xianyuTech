@@ -115,11 +115,57 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
 
 
 
+- (void) more{
+    
+    
+    
+    
+    //  CFRunLoopSourceCreate(CFAllocatorRef allocator, CFIndex order, CFRunLoopSourceContext *context)
+    
+    
+    
+    
+    // source 0, 可以改的
+    
+    //  添加 source
+    //  CFRunLoopAddSource(CFRunLoopRef rl, CFRunLoopSourceRef source, CFRunLoopMode mode)
+    
+    
+    
+    
+    
+    
+    
+    /*
+    CFRunLoopObserverCreateWithHandler(CFAllocatorRef allocator, CFOptionFlags kCFRunLoopAll, Boolean repeats, CFIndex order, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        
+    })
+    */
+    
+    
+}
+// 希望 RunLoop 执行这个方法
+// source 放方法，无法控制执行的时机
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     
     NSLog(@"%s", __func__);
     
+    
+    // 可看出，定时器，能够唤醒线程
     [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
         NSLog(@"定时器");
     }];
