@@ -9,11 +9,34 @@
 #import "ViewController.h"
 
 
+// 监测 RunLoop 的状态
 
 // C 语言的，回调函数
 void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void * info){
     
-    
+    switch (activity) {
+        case kCFRunLoopEntry:
+            NSLog(@"kCFRunLoopEntry");
+            break;
+        case kCFRunLoopBeforeTimers:
+            NSLog(@"kCFRunLoopBeforeTimers");
+            break;
+        case kCFRunLoopBeforeSources:
+            NSLog(@"kCFRunLoopBeforeSources");
+            break;
+        case kCFRunLoopBeforeWaiting:
+            NSLog(@"kCFRunLoopBeforeWaiting");
+            break;
+        case kCFRunLoopAfterWaiting:
+            NSLog(@"kCFRunLoopAfterWaiting");
+            break;
+        case kCFRunLoopExit:
+            NSLog(@"kCFRunLoopExit");
+            break;
+            
+        default:
+            break;
+    }
     
     
 }
@@ -50,6 +73,9 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
 - (void) doObserve{
     
     //  CFOptionFlags activities ， 要监测的状态
+    //  监听所有的状态， kCFRunLoopAllActivities
+    
+    
     
     //  CFRunLoopObserverCallBack callout, C 语言的回调函数
     
@@ -67,7 +93,9 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopCommonModes);
     
     
-    // 最终，要释放的
+    //  最终，要释放的
+    //  C 语言，带有 create 和 copy 的，
+    //  都需要 release
     CFRelease(observer);
 }
 
