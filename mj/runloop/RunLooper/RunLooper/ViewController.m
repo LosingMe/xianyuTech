@@ -16,22 +16,22 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     
     switch (activity) {
         case kCFRunLoopEntry:
-            NSLog(@"kCFRunLoopEntry");
+            NSLog(@"kCFRunLoopEntry,     %@", CFRunLoopCopyCurrentMode(CFRunLoopGetCurrent()));
             break;
-        case kCFRunLoopBeforeTimers:
-            NSLog(@"kCFRunLoopBeforeTimers");
-            break;
-        case kCFRunLoopBeforeSources:
-            NSLog(@"kCFRunLoopBeforeSources");
-            break;
-        case kCFRunLoopBeforeWaiting:
-            NSLog(@"kCFRunLoopBeforeWaiting");
-            break;
-        case kCFRunLoopAfterWaiting:
-            NSLog(@"kCFRunLoopAfterWaiting");
-            break;
+//        case kCFRunLoopBeforeTimers:
+//            NSLog(@"kCFRunLoopBeforeTimers");
+//            break;
+//        case kCFRunLoopBeforeSources:
+//            NSLog(@"kCFRunLoopBeforeSources");
+//            break;
+//        case kCFRunLoopBeforeWaiting:
+//            NSLog(@"kCFRunLoopBeforeWaiting");
+//            break;
+//        case kCFRunLoopAfterWaiting:
+//            NSLog(@"kCFRunLoopAfterWaiting");
+//            break;
         case kCFRunLoopExit:
-            NSLog(@"kCFRunLoopExit");
+            NSLog(@"kCFRunLoopExit,     %@", CFRunLoopCopyCurrentMode(CFRunLoopGetCurrent()));
             break;
             
         default:
@@ -65,6 +65,8 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     
     NSLog(@"%@", [NSRunLoop currentRunLoop]);
     */
+    
+    [self doObserve];
 }
 
 
@@ -96,7 +98,7 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     //  最终，要释放的
     //  C 语言，带有 create 和 copy 的，
     //  都需要 release
-    CFRelease(observer);
+    // CFRelease(observer);
 }
 
 
@@ -107,7 +109,9 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     
     NSLog(@"%s", __func__);
     
-    
+    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
+        NSLog(@"定时器");
+    }];
     
 }
 
