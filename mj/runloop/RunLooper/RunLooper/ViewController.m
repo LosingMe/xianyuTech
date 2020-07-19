@@ -14,9 +14,11 @@
 // C 语言的，回调函数
 void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void * info){
     
+    
+    CFRunLoopMode mode = CFRunLoopCopyCurrentMode(CFRunLoopGetCurrent());
     switch (activity) {
         case kCFRunLoopEntry:
-            NSLog(@"kCFRunLoopEntry,     %@", CFRunLoopCopyCurrentMode(CFRunLoopGetCurrent()));
+            NSLog(@"kCFRunLoopEntry,     %@", mode);
             break;
 //        case kCFRunLoopBeforeTimers:
 //            NSLog(@"kCFRunLoopBeforeTimers");
@@ -31,13 +33,13 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
 //            NSLog(@"kCFRunLoopAfterWaiting");
 //            break;
         case kCFRunLoopExit:
-            NSLog(@"kCFRunLoopExit,     %@", CFRunLoopCopyCurrentMode(CFRunLoopGetCurrent()));
+            NSLog(@"kCFRunLoopExit,     %@", mode);
             break;
             
         default:
             break;
     }
-    
+    CFRelease(mode);
     
 }
 
@@ -89,6 +91,15 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     
     
     CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, observeRunLoopActivities, NULL);
+    
+    
+    
+    
+    // 监听不到 RunLoop 进入 Entry ，
+    // 除非在程序启动的那一刻，就去监听
+    
+    // 这个时候监听，已经晚了
+    // 程序已经进入了 entry
     
     
     //  kCFRunLoopCommonModes 通用模式，包含 default 和 UITracking
