@@ -56,14 +56,22 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 开子线程
+    // 拿到一个全局的并发队列
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"ha  ha");
+        });
+    });
     
     
     
-    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
-        // 这里断点， bt
-        // 函数调用栈
-        NSLog(@"定时器");
-    }];
+    
+//    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
+//        // 这里断点， bt
+//        // 函数调用栈
+//        NSLog(@"定时器");
+//    }];
     
    // [self doObserve];
 }
