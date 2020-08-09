@@ -57,7 +57,21 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     // Do any additional setup after loading the view.
     
     
-    /*
+    
+    
+    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
+        // 这里断点， bt
+        // 函数调用栈
+        NSLog(@"定时器");
+    }];
+    
+   // [self doObserve];
+}
+
+
+- (void) testAnd{
+    
+    
     NSLog(@"Foundation  current %p,  main %p", NSRunLoop.currentRunLoop, NSRunLoop.mainRunLoop);
     
     
@@ -66,13 +80,9 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     
     
     NSLog(@"%@", [NSRunLoop currentRunLoop]);
-    */
     
-    [self doObserve];
+    
 }
-
-
-
 
 - (void) doObserve{
     
@@ -143,6 +153,21 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
     */
     
     
+    
+    
+    
+    
+    // 执行 block
+    /*
+    CFRunLoopPerformBlock(CFRunLoopRef rl, CFTypeRef mode, ^{
+        
+    })
+    */
+    
+    
+    
+    
+    
 }
 // 希望 RunLoop 执行这个方法
 // source 放方法，无法控制执行的时机
@@ -160,15 +185,17 @@ void observeRunLoopActivities(CFRunLoopObserverRef observer, CFRunLoopActivity a
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    
+    // 这里断点， bt
+    // 函数调用栈
     NSLog(@"%s", __func__);
     
     
-    // 可看出，定时器，能够唤醒线程
-    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
-        NSLog(@"定时器");
-    }];
+//    // 可看出，定时器，能够唤醒线程
+//    [NSTimer scheduledTimerWithTimeInterval:3.0 repeats: NO block:^(NSTimer * _Nonnull timer) {
+//        // 这里断点， bt
+//        // 函数调用栈
+//        NSLog(@"定时器");
+//    }];
     
 }
 
